@@ -55,7 +55,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   color: #fff;
-  transition: all 5s;
+  transition: all 0.5s ease-in-out;
 }
 main ul {
   display: flex;
@@ -70,6 +70,9 @@ main ul li {
   transition: all 0.2s;
   cursor: pointer;
   list-style: none;
+}
+main ul li.active {
+  background-color: #333;
 }
 
 section.into {
@@ -97,23 +100,21 @@ section.into ul.iteme {
   justify-content: space-between;
 }
 section.into ul.iteme li {
-  margin: 10px auto;
-  padding: 10px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 10px;
+  gap: 10px;
+  position: relative;
 }
-section.into ul.iteme li:nth-of-type(1) {
-  border-right: 1px solid #ddd;
-}
-section.into ul.iteme li:nth-of-type(2) {
-  border-right: 1px solid #ddd;
-}
-section.into ul.iteme li:nth-of-type(4) {
-  border-right: 1px solid #ddd;
-}
-section.into ul.iteme li:nth-of-type(5) {
+section.into ul.iteme li:not(:nth-child(3n)) {
   border-right: 1px solid #ddd;
 }
 section.into ul.iteme li img {
   width: 35px;
+  margin-bottom: 10px;
 }
 section.into ul.iteme li p {
   color: #555;
@@ -234,23 +235,41 @@ section.business ul li button {
   background-color: #5f6971;
   color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
   overflow: hidden;
-  z-index: 1;
-  width: 50%;
+  width: 100%;
+  height: 150px;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
 }
 .community .box .box3 .icon_wrap {
   background-image: url(../images/boxicon-03.jpg);
-  width: 48px;
-  height: 36px;
-  bottom: 35px;
-  right: 35px;
+  background-repeat: no-repeat;
+  background-position: ieft center;
+  background-size: contain;
+  width: 40px;
+  height: 30px;
+  margin-bottom: 10px;
+}
+.community .box .box3 h4 {
+  font-size: 18px;
+  margin: 0;
 }
 .community .box .img_wrap {
-  position: absolute;
-  left: 50%;
+  width: 45%;
+  height: 100%;
   overflow: hidden;
+  border-radius: 0 10px 10px 0;
+}
+.community .box .img_wrap img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease;
 }
 .community .box .img_wrap:hover img {
   transform: scale(1.1);
@@ -289,4 +308,30 @@ section.business ul li button {
 .community .box .box4 .but:hover {
   background-color: #559cd8;
   border-color: #559cd8;
+}
+.community footer {
+  width: 100%;
+  padding: 30px 0;
+  text-align: center;
+}
+.community footer ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  list-style: none;
+}
+.community footer ul li a {
+  transition: transfrom 0.3s ease;
+}
+.community footer ul li a:hover {
+  transform: scale(1.1);
+}
+.community footer ul li a img {
+  width: 120px;
+  height: auto;
+  display: block;
 }/*# sourceMappingURL=style.css.map */
