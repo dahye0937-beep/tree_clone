@@ -363,4 +363,20 @@ footer .contact {
   align-items: center;
   gap: 5px;
   font-size: 13px;
+}
+
+@media all and (min-width: 1024px) {
+  nav {
+    padding: 0 20px;
+  }
+  nav img {
+    width: 130px;
+  }
+  nav .menu-but {
+    width: 28px;
+    height: 18px;
+  }
+  nav .menu-but ul li {
+    height: 2.5px;
+  }
 }/*# sourceMappingURL=style.css.map */
