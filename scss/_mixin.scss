@@ -1,0 +1,13 @@
+@mixin flex-layout($direction:row, $justify:center, $align:center){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin desktop{ 
+    @media all and (min-width:1024px) {
+        @content;
+
+}
+}
