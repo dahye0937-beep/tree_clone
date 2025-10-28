@@ -309,29 +309,58 @@ section.business ul li button {
   background-color: #559cd8;
   border-color: #559cd8;
 }
-.community footer {
+
+footer {
   width: 100%;
-  padding: 30px 0;
+  margin: 10px;
+  padding: 40px 20px;
   text-align: center;
 }
-.community footer ul {
-  margin: 0;
-  padding: 0;
+footer .sponsor {
   display: flex;
-  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
   list-style: none;
+  margin-bottom: 30px;
 }
-.community footer ul li a {
-  transition: transfrom 0.3s ease;
-}
-.community footer ul li a:hover {
-  transform: scale(1.1);
-}
-.community footer ul li a img {
-  width: 120px;
+footer .sponsor li a img {
+  width: 100%;
   height: auto;
-  display: block;
+}
+footer .footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 25px;
+}
+footer .footer-info img {
+  width: 150px;
+  margin-bottom: 10px;
+}
+footer .footer-info p {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+footer .footer-info .list {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+footer .footer-info .list li {
+  font-size: 13px;
+}
+footer .footer-info .list li span {
+  font-weight: 600;
+  color: #559cd8;
+}
+footer .contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
 }/*# sourceMappingURL=style.css.map */
