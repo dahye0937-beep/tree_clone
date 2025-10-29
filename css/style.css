@@ -246,12 +246,12 @@ section.business ul li button {
   position: relative;
 }
 .community .box .box3 .icon_wrap {
+  width: 40px;
+  height: 40px;
   background-image: url(../images/boxicon-03.jpg);
   background-repeat: no-repeat;
-  background-position: ieft center;
+  background-position: left center;
   background-size: contain;
-  width: 40px;
-  height: 30px;
   margin-bottom: 10px;
 }
 .community .box .box3 h4 {

@@ -241,12 +241,12 @@ section.business {
       box-sizing: border-box;
       position: relative;
       .icon_wrap {
+        width: 40px;
+        height: 40px;
         background-image: url(../images/boxicon-03.jpg);
         background-repeat: no-repeat;
-        background-position: ieft center;
+        background-position: left center;
         background-size: contain;
-        width: 40px;
-        height: 30px;
         margin-bottom: 10px;
       }
       h4{
