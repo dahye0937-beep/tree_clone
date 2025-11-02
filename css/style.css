@@ -43,14 +43,15 @@ header nav .menu-but ul li {
 }
 
 main {
-  height: 50vh;
+  height: 35vh;
+  min-height: 180px;
   padding: 2rem;
   gap: 10px;
   position: relative;
   background-image: url(../images/img01.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right bottom;
+  background-position: 80% 60%;
   z-index: 1;
   display: flex;
   flex-direction: column;
@@ -58,6 +59,13 @@ main {
   align-items: flex-start;
   color: #fff;
   transition: all 0.5s ease-in-out;
+}
+@media all and (min-width: 1024px) {
+  main {
+    height: 50vh;
+    min-height: 480px;
+    background-position: right 40%;
+  }
 }
 main ul {
   display: flex;
@@ -82,12 +90,12 @@ main ul li.active {
 section.into {
   margin: 50px auto;
   padding: 20px;
-  flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
 }
 @media all and (min-width: 1024px) {
   section.into {
+    width: 90%;
     padding: 0 40px;
     position: relative;
     margin-top: -50px;
@@ -101,7 +109,7 @@ section.into {
     text-align: center;
     background-color: #fff;
     box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 15%;
+    border-radius: 60px;
   }
 }
 section.into span {
@@ -124,6 +132,9 @@ section.into ul.iteme {
 @media all and (min-width: 1024px) {
   section.into ul.iteme {
     display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
   }
 }
 section.into ul.iteme li {
@@ -138,6 +149,11 @@ section.into ul.iteme li {
 }
 section.into ul.iteme li:not(:nth-child(3n)) {
   border-right: 1px solid #ddd;
+}
+@media all and (min-width: 1024px) {
+  section.into ul.iteme li {
+    border-right: 1px solid #ddd;
+  }
 }
 section.into ul.iteme li img {
   width: 35px;
@@ -160,6 +176,24 @@ section.business h3 {
   font-size: 35px;
   text-align: center;
   margin-bottom: 20px;
+  position: relative;
+}
+section.business h3::before, section.business h3::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  width: 50px;
+  height: 4px;
+}
+section.business h3::before {
+  background-color: #559cd8;
+  left: calc(50% - 25px);
+  margin-bottom: 10px;
+}
+section.business h3::after {
+  background-color: #222;
+  left: calc(50% + 25px);
+  margin-bottom: 10px;
 }
 section.business ul {
   width: 90%;
@@ -208,7 +242,7 @@ section.business ul li button {
   justify-content: center;
   background: #eae9e9;
   border: none;
-  border-radius: 20px;
+  border-radius: 40px;
   cursor: pointer;
 }
 
@@ -224,9 +258,27 @@ section.business ul li button {
   max-width: 768px;
 }
 .community h3 {
-  padding: 20px;
   font-size: 35px;
   text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+.community h3::before, .community h3::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  width: 50px;
+  height: 4px;
+}
+.community h3::before {
+  background-color: #559cd8;
+  left: calc(50% - 25px);
+  margin-bottom: 10px;
+}
+.community h3::after {
+  background-color: #222;
+  left: calc(50% + 25px);
+  margin-bottom: 10px;
 }
 .community .top-box {
   padding: 20px;
@@ -245,8 +297,22 @@ section.business ul li button {
   background-color: #559cd8;
   border-radius: 10px;
 }
+.community .top-box .box1 h4 {
+  position: relative;
+  margin-bottom: 20px;
+}
+.community .top-box .box1 h4::before {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
 .community .top-box .box1 img {
   border-radius: 50%;
+  bottom: 30px;
   position: absolute;
   right: 1rem;
   box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
@@ -256,24 +322,46 @@ section.business ul li button {
   background-color: #fff;
   border-radius: 10px;
 }
+.community .top-box .box2 h4 {
+  position: relative;
+  margin-bottom: 10px;
+}
+.community .top-box .box2 h4::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 20px;
+  height: 2px;
+  background-color: #559cd8;
+}
 .community .top-box .box2 span {
   color: #559cd8;
 }
 .community .top-box .box2 img {
   border-radius: 45%;
   position: absolute;
+  bottom: 30px;
   right: 1rem;
   box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
 }
 .community .box3 {
   display: flex;
+  flex-direction: row;
+  align-items: start;
   color: #fff;
+}
+@media all and (min-width: 1024px) {
+  .community .box3 {
+    flex-direction: row;
+    align-items: stretch;
+  }
 }
 .community .box3 .box3-txt {
   padding: 20px;
   background-color: #5f6971;
   position: relative;
-  border-radius: 16px;
+  border-radius: 16px 0 0 16px;
 }
 .community .box3 .box3-txt img {
   width: 48px;
@@ -287,7 +375,7 @@ section.business ul li button {
 .community .box3 .box3-img {
   right: 35px;
   background-color: #eae9e9;
-  border-radius: 16px;
+  border-radius: 0 16px 16px 0;
   overflow: hidden;
 }
 .community .box3 .box3-img img {
@@ -301,15 +389,18 @@ section.business ul li button {
 .community .box4 {
   margin-top: 20px;
   width: 100%;
-  padding: 60px;
+  padding: 60px 30px;
   border-radius: 10px;
   background-image: url(../images/box-02.jpg);
   color: #fff;
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 .community .box4 h4 {
   font-size: 2rem;
+  line-height: 1.2;
+  margin-bottom: 10px;
 }
 .community .box4 .but {
   width: 100px;
@@ -322,7 +413,6 @@ section.business ul li button {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  border: none;
   border-radius: 20px;
   border: 1px solid #fff;
   color: #fff;
@@ -360,10 +450,9 @@ footer .footer-info {
 }
 @media all and (min-width: 1024px) {
   footer .footer-info {
+    display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    padding-bottom: 40px;
-    gap: 20px;
   }
 }
 footer .footer-info img {
@@ -376,18 +465,11 @@ footer .footer-info p {
 }
 footer .footer-info .list {
   display: flex;
+  justify-content: flex-start;
   gap: 10px;
 }
 footer .footer-info .list span {
   color: #559cd8;
-}
-@media all and (min-width: 1024px) {
-  footer .footer-info {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: nowrap;
-  }
 }
 
 .footer-txt {
@@ -395,8 +477,8 @@ footer .footer-info .list span {
   border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-}
-.footer-txt li {
+  justify-content: start;
+  gap: 4px 20px;
+  line-height: 1.4;
   color: #888;
 }/*# sourceMappingURL=style.css.map */

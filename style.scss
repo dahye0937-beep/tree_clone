@@ -11,12 +11,14 @@ header {
     padding: 0px 20px;
     display: flex;
     @include mixin.flex-layout($justify: space-between);
+
     img {
       width: 150px;
       height: 75px;
       margin: 1rem;
       cursor: pointer;
     }
+
     .menu-but {
       width: 30px;
       height: 20px;
@@ -24,12 +26,14 @@ header {
       display: flex;
       position: relative;
       display: block;
+
       ul {
         width: 100%;
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
         li {
           display: block;
           width: 100%;
@@ -43,25 +47,34 @@ header {
 }
 
 main {
-  height: 50vh;
+  height: 35vh;
+  min-height: 180px;
   padding: 2rem;
   gap: 10px;
   position: relative;
   background-image: url(../images/img01.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: right bottom;
+  background-position: 80% 60%;
   z-index: 1;
   // background-image: url(../images/img02.jpg);
   // background-image: url(../images/img03.jpg);
   @include mixin.flex-layout(column, center, flex-start);
   color: #fff;
   transition: all 0.5s ease-in-out;
+
+  @include mixin.desktop {
+    height: 50vh;
+    min-height: 480px;
+    background-position: right 40%;
+  }
+
   ul {
     display: flex;
     flex-flow: nowrap;
     width: 70px;
     gap: 10px;
+
     li {
       width: 10px;
       height: 10px;
@@ -70,6 +83,7 @@ main {
       transition: all 0.2s;
       cursor: pointer;
       list-style: none;
+
       &.active {
         background-color: #333;
         width: 20px;
@@ -81,10 +95,11 @@ main {
 section.into {
   margin: 50px auto;
   padding: 20px;
-  flex-wrap: wrap;
   justify-content: center;
   cursor: pointer;
+
   @include mixin.desktop {
+    width: 90%;
     padding: 0 40px;
     position: relative;
     margin-top: -50px;
@@ -98,27 +113,36 @@ section.into {
     text-align: center;
     background-color: #fff;
     box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
-    border-radius: 15%;
+    border-radius: 60px;
   }
+
   span {
     color: #559cd8;
   }
+
   h2 {
     font-size: 30px;
   }
+
   .title {
     font-size: 15px;
     margin-bottom: 20px;
     color: #ccc;
   }
+
   ul.iteme {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     text-align: center;
     justify-content: space-between;
+
     @include mixin.desktop {
       display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
     }
+
     li {
       margin: 10px;
       display: flex;
@@ -128,17 +152,25 @@ section.into {
       padding: 20px 10px;
       gap: 10px;
       position: relative;
+
       &:not(:nth-child(3n)) {
         border-right: 1px solid #ddd;
       }
+
+      @include mixin.desktop {
+        border-right: 1px solid #ddd;
+      }
+
       img {
         width: 35px;
         margin-bottom: 10px;
+
         @include mixin.desktop {
           width: 50px;
           height: 50px;
         }
       }
+
       p {
         color: $text-sub;
       }
@@ -148,11 +180,35 @@ section.into {
 
 section.business {
   margin: 20px;
+
   h3 {
     font-size: 35px;
     text-align: center;
     margin-bottom: 20px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      width: 50px;
+      height: 4px;
+    }
+
+    &::before {
+      background-color: #559cd8;
+      left: calc(50% - 25px);
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      background-color: #222;
+      left: calc(50% + 25px);
+      margin-bottom: 10px;
+    }
   }
+
   ul {
     width: 90%;
     margin: 0 auto;
@@ -161,30 +217,36 @@ section.business {
     justify-content: space-between;
     gap: 5px;
     cursor: pointer;
+
     @include mixin.desktop {
       display: flex;
       justify-content: center;
       gap: 20px;
       flex-wrap: nowrap;
     }
+
     li {
       width: 45%;
       border: 1px solid #ddd;
       border-radius: 12px;
       text-align: center;
       margin-bottom: 20px;
+
       img {
         width: 100%;
+
         &:hover {
           position: relative;
           transform: scale(1.02);
           transition: all 0.3s;
         }
       }
+
       p {
         margin-top: 20px;
         font-size: 20px;
       }
+
       button {
         width: 100px;
         height: 35px;
@@ -196,7 +258,7 @@ section.business {
         justify-content: center;
         background: #eae9e9;
         border: none;
-        border-radius: 20px;
+        border-radius: 40px;
         cursor: pointer;
       }
     }
@@ -208,61 +270,124 @@ section.business {
   margin: 1rem auto;
   background-color: #ebf2f9;
   padding: 30px;
-  .box{
+
+  .box {
     width: 70%;
     margin: 0 auto;
     max-width: 768px;
   }
+
   h3 {
-    padding: 20px;
     font-size: 35px;
     text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 100%;
+      width: 50px;
+      height: 4px;
+    }
+
+    &::before {
+      background-color: #559cd8;
+      left: calc(50% - 25px);
+      margin-bottom: 10px;
+    }
+
+    &::after {
+      background-color: #222;
+      left: calc(50% + 25px);
+      margin-bottom: 10px;
+    }
   }
+
   .top-box {
     padding: 20px;
     display: flex;
     justify-content: center;
     gap: 2rem;
+
     div {
       height: 120px;
       flex: 1;
       position: relative;
     }
+
     .box1 {
       padding: 15px;
       color: #fff;
       background-color: #559cd8;
       border-radius: 10px;
+      h4{
+        position: relative;
+        margin-bottom: 20px;
+        &::before{
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background-color: #fff;
+        }
+      }
       img {
         border-radius: 50%;
+        bottom: 30px;
         position: absolute;
         right: 1rem;
         box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
       }
     }
+
     .box2 {
       padding: 15px;
       background-color: #fff;
       border-radius: 10px;
+      h4{
+        position: relative;
+        margin-bottom: 10px;
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: -5px;
+          left: 0;
+          width: 20px;
+          height: 2px;
+          background-color: #559cd8;
+        }
+      }
       span {
         color: #559cd8;
       }
+
       img {
         border-radius: 45%;
         position: absolute;
+        bottom: 30px;
         right: 1rem;
         box-shadow: 3px 4px 10px 0px rgba(0, 0, 0, 0.3);
       }
     }
   }
+
   .box3 {
     display: flex;
+    flex-direction: row;
+    align-items: start;
     color: #fff;
+    @include mixin.desktop{
+      flex-direction: row;
+      align-items: stretch;
+    }
     .box3-txt {
       padding: 20px;
       background-color: #5f6971;
       position: relative;
-      border-radius: 16px;
+      border-radius: 16px 0 0 16px;
       img {
         width: 48px;
         height: 35px;
@@ -270,36 +395,45 @@ section.business {
         right: 1rem;
       }
     }
+
     div {
       flex: 1;
     }
+
     .box3-img {
       right: 35px;
       background-color: #eae9e9;
-      border-radius: 16px;
+      border-radius: 0 16px 16px 0;
       overflow: hidden;
       img {
         width: 90%;
         position: relative;
         transition: all 0.3s;
+
         &:hover {
           transform: scale(1.3);
         }
       }
     }
   }
+
   .box4 {
     margin-top: 20px;
     width: 100%;
-    padding: 60px;
+    padding: 60px 30px;
     border-radius: 10px;
     background-image: url(../images/box-02.jpg);
     color: #fff;
     background-position: center;
     background-repeat: no-repeat;
+    background-size: cover;
+
     h4 {
       font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 10px;
     }
+
     .but {
       width: 100px;
       height: 35px;
@@ -311,11 +445,11 @@ section.business {
       align-items: center;
       justify-content: center;
       background-color: transparent;
-      border: none;
       border-radius: 20px;
       border: 1px solid #fff;
       color: #fff;
       cursor: pointer;
+
       &:hover {
         background-color: #559cd8;
         border: #559cd8;
@@ -323,11 +457,13 @@ section.business {
     }
   }
 }
+
 footer {
   width: 100%;
   margin: 10px;
   padding: 40px 20px;
   text-align: center;
+
   .sponsor {
     display: flex;
     justify-content: center;
@@ -335,11 +471,13 @@ footer {
     gap: 20px;
     list-style: none;
     margin-bottom: 30px;
+
     li {
       a img {
         width: 100%;
         height: auto;
       }
+
       &:nth-of-type(1),
       &:nth-of-type(2),
       &:nth-of-type(3),
@@ -348,48 +486,49 @@ footer {
       }
     }
   }
+
   .footer-info {
     padding: 20px;
     border-top: 1px solid #ddd;
+
     @include mixin.desktop {
+      display: flex;
       justify-content: space-between;
       align-items: flex-end;
-      padding-bottom: 40px;
-      gap: 20px;
     }
+
     img {
       width: 150px;
       height: 60px;
     }
+
     p {
       display: flex;
       font-size: 1rem;
     }
+
     .list {
       display: flex;
+      justify-content: flex-start;
       gap: 10px;
+      
       span {
         color: #559cd8;
       }
     }
-    @include mixin.desktop {
-      display: flex;
-      gap: 20px;
-      justify-content: center;
-      flex-wrap: nowrap;
-    }
   }
 }
+
 .footer-txt {
-  padding: 20px;
+  padding: 20px ;
   border-top: 1px solid #ddd;
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  li {
-    color: #888;
-  }
+  justify-content: start;
+  gap: 4px 20px;
+  line-height: 1.4;
+  color: #888;
 }
+
 // 데스크탑을 기준으로 작업
-@include mixin.desktop {
-}
+@include mixin.desktop {}
